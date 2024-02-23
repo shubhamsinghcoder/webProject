@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerlinks}}
+  </head>
+  <body>
+    {{>navbar}}
+    <!-- Main header -->
+    <div class="container-fluid main-header">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+          <div class="row">
+            <!-- Left side div -->
+            <div class="col-md-6 col-12 main_header_left align-item-center">
+              <figure class="errimg">
+                <img
+                  src="images/404Error.png"
+                  alt="singh"
+                  class="img-fluid"
+                  title="thakur sahab"
+                />
+              </figure>
+           
+            <!-- Right side div -->
+              <p>Welcome to my profile</p>
+              <h1>
+                   {{errorMsg}}
+              </h1>
+              <a href="/"><button>Go Back</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer  -->
+    {{>footer}}
+  </body>
+</html>

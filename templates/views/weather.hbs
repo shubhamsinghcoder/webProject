@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerlinks}}
+  </head>
+  <body>
+  {{>navbar}}
+    <!-- Main header -->
+    <div class="container-fluid main-header">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+              <div class="main-content">
+                <form class="temp_form">
+                  <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                  <input type="submit" value="search" id="submitBtn">
+                </form>
+              </div>
+              <div class="tempInformation">
+                <div class="top_layer">
+                  <p id="day">Tuesday</p>
+                  <p id="today_data"></p>
+                </div>
+                <div class="main_layer">
+                  <p id="city_name">Get output</p>
+                  <div class="middle_layer data_hide">
+                    <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                    <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer  -->
+   {{>footer}}
+   <script src="js/main.js"></script>
+   <script>
+    
+    const getCurDay =()=>{
+      let weekdays = new Array(7);
+      weekdays[0] ="Sunday";
+      weekdays[1] ="Monday";
+      weekdays[2] ="Tuesday";
+      weekdays[3] ="Wednesday";
+      weekdays[4] ="Thursday";
+      weekdays[5] ="Friday";
+      weekdays[6] ="Saturday";
+      let currentTime = new Date();
+      days = weekdays[currentTime.getDay()];
+     let day = document.getElementById("day");
+      day.innerText = days;
+    }
+    getCurDay();
+
+    const getMonth = ()=>{
+      let month = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+     const curMonth = new Date();
+    
+     let  date = curMonth.getDate();
+     let mon = month[curMonth.getMonth()];
+
+     const today_data = document.getElementById("today_data");
+
+     today_data.innerHTML = date +" "+ mon;
+
+
+    }
+      getMonth();
+   </script>
+  </body>
+</html>
